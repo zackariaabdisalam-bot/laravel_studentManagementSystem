@@ -25,33 +25,31 @@
                 <i class="bi bi-book me-2"></i>
                 Courses
             </a>
-            <a href="{{ route('attendance.index') }}"
-               class="nav-link {{ request()->routeIs('attendance.*') ? 'active bg-white text-primary fw-semibold' : 'text-white' }}">
-                <i class="bi bi-calendar-check me-2"></i>
-                Attendance
-            </a>
-
-            <a href="{{ route('fees.index') }}"
-               class="nav-link {{ request()->routeIs('fees.*') ? 'active bg-white text-primary fw-semibold' : 'text-white' }}">
+            <span class="nav-link text-white disabled opacity-50"
+                  aria-disabled="true"
+                  title="Unavailable">
                 <i class="bi bi-cash-stack me-2"></i>
                 Fees
-            </a>
-            <a href="{{ route('payments.index') }}"
-               class="nav-link {{ request()->routeIs('payments.*') ? 'active bg-white text-primary fw-semibold' : 'text-white' }}">
+            </span>
+            <span class="nav-link text-white disabled opacity-50"
+                  aria-disabled="true"
+                  title="Unavailable">
                 <i class="bi bi-credit-card me-2"></i>
                 Payments
-            </a>
-            <a href="{{ route('reports.index') }}"
-               class="nav-link {{ request()->routeIs('reports.*') ? 'active bg-white text-primary fw-semibold' : 'text-white' }}">
+            </span>
+            <span class="nav-link text-white disabled opacity-50"
+                  aria-disabled="true"
+                  title="Unavailable">
                 <i class="bi bi-bar-chart me-2"></i>
                 Reports
-            </a>
+            </span>
 
-            <a href="{{ route('profile.edit') }}"
-               class="nav-link {{ request()->routeIs('profile.*') ? 'active bg-white text-primary fw-semibold' : 'text-white' }}">
+            <span class="nav-link text-white disabled opacity-50"
+                  aria-disabled="true"
+                  title="Unavailable">
                 <i class="bi bi-person-circle me-2"></i>
                 Profile
-            </a>
+            </span>
         </nav>
     </div>
 </aside>

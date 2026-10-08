@@ -10,11 +10,20 @@ class Payment extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['fee_id', 'student_id', 'amount', 'paid_at', 'method', 'reference'];
+    protected $fillable = [
+     'fee_id',
+     'student_id',
+     'amount',
+     'paid_at',
+     'method', 
+     'reference',
+     'received_by',
+     ];
 
     protected function casts(): array
     {
-        return ['amount' => 'decimal:2', 'paid_at' => 'date'];
+        return ['amount' => 'decimal:2',
+         'paid_at' => 'date'];
     }
 
     public function fee(): BelongsTo
@@ -25,5 +34,10 @@ class Payment extends Model
     public function student(): BelongsTo
     {
         return $this->belongsTo(Student::class);
+    }
+
+    public function receivedBy(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'received_by');
     }
 }

@@ -132,6 +132,10 @@
             const toggle = document.querySelector('.sidebar-toggle');
             const backdrop = document.querySelector('.sidebar-backdrop');
 
+            if (!sidebar || !toggle || !backdrop) {
+                return;
+            }
+
             const closeSidebar = () => {
                 sidebar.classList.remove('is-open');
                 backdrop.classList.add('d-none');

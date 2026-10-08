@@ -12,12 +12,13 @@ class Student extends Model
     use HasFactory;
 
     protected $fillable = [
-        'admission_number',
-        'name',
+        'student_number',
+        'firstname',
+        'lastname',
+        'gender',
         'email',
-        'phone',
-        'course_id',
-        'enrollment_date',
+        'phone no',
+        'address',
         'status',
     ];
 
@@ -44,5 +45,10 @@ class Student extends Model
     public function payments(): HasMany
     {
         return $this->hasMany(Payment::class);
+    }
+
+    public function enrollments(): HasMany
+    {
+        return $this->hasMany(Enrollment::class);
     }
 }

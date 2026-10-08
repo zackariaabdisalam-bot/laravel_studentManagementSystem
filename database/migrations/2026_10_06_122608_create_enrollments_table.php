@@ -23,7 +23,7 @@ return new class extends Migration
                 ->cascadeOnDelete();
 
             $table->foreignId('semester_id')
-                ->constrained()
+                ->constrained('semesters_years')
                 ->cascadeOnDelete();
 
             $table->foreignId('academic_year_id')

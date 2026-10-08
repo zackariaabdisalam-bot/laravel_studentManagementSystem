@@ -18,6 +18,17 @@
 
         <div class="d-flex align-items-center ms-auto">
             @auth
+                @php
+                    $user = Auth::user();
+                @endphp
+
+                <button class="btn btn-light rounded-circle me-2"
+                        type="button"
+                        aria-label="Notifications"
+                        title="Notifications">
+                    <i class="bi bi-bell" aria-hidden="true"></i>
+                </button>
+
                 <div class="dropdown">
                     <button class="btn p-1 p-sm-2 border-0 bg-transparent dropdown-toggle d-flex align-items-center"
                             type="button"
@@ -26,19 +37,21 @@
                             aria-label="Open account menu">
                         <span class="d-flex align-items-center justify-content-center rounded-circle bg-primary-subtle text-primary fw-bold me-sm-2"
                               style="width: 38px; height: 38px;">
-                            {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+                            {{ strtoupper(substr(($user->name ?? 'U'), 0, 1)) }}
                         </span>
                         <span class="d-none d-sm-block text-start">
-                            <span class="d-block fw-semibold text-dark">{{ Auth::user()->name }}</span>
+                            <span class="d-block fw-semibold text-dark">{{ $user->name }}</span>
                         </span>
                     </button>
 
                     <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2">
                         <li><h6 class="dropdown-header">Account</h6></li>
                         <li>
-                            <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                            <span class="dropdown-item text-muted disabled"
+                                  aria-disabled="true"
+                                  title="Unavailable">
                                 <i class="bi bi-person-circle me-2" aria-hidden="true"></i>Profile
-                            </a>
+                            </span>
                         </li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
@@ -50,6 +63,13 @@
                             </form>
                         </li>
                     </ul>
+                </div>
+            @else
+                <div class="d-flex align-items-center gap-2">
+                    <a href="{{ route('login') }}" class="btn btn-primary btn-sm">Login</a>
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}" class="btn btn-outline-primary btn-sm">Register</a>
+                    @endif
                 </div>
             @endauth
         </div>

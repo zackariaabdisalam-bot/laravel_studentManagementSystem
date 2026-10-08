@@ -35,7 +35,7 @@
                             <h2 class="h5 fw-bold mb-1">Recent students</h2>
                             <p class="small text-secondary mb-0">Latest enrollments</p>
                         </div>
-                        <a href="{{ route('students.index') }}" class="btn btn-sm btn-outline-primary rounded-pill px-3">View students</a>
+                        <span class="btn btn-sm btn-outline-secondary rounded-pill px-3 disabled" aria-disabled="true">View students</span>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-hover align-middle mb-0">
@@ -100,7 +100,7 @@
                             <h2 class="h5 fw-bold mb-1">Recent payments</h2>
                             <p class="small text-secondary mb-0">Latest fee payments received</p>
                         </div>
-                        <a href="{{ route('payments.index') }}" class="btn btn-sm btn-outline-primary rounded-pill px-3">View payments</a>
+                        <span class="btn btn-sm btn-outline-secondary rounded-pill px-3 disabled" aria-disabled="true">View payments</span>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-hover align-middle mb-0">

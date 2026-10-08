@@ -18,17 +18,18 @@ return new class extends Migration
               ->constrained('students')
               ->onDelete('cascade');
 
-        $table->foreignId('fee_structure_id')
-              ->constrained('fee_structures')
+        $table->foreignId('fee_id')
+              ->constrained('fees')
               ->onDelete('cascade');
 
         $table->decimal('amount', 12, 2);
-        $table->string('payment_method');
-        $table->string('transaction_reference')->unique();
-        $table->date('payment_date');
-        $table->string('received_by')
+        $table->string('method');
+        $table->string('reference')->nullable()->unique();
+        $table->date('paid_at');
+        $table->foreignId('received_by')
+              ->nullable()
               ->constrained('users')
-              ->onDelete('cascade');
+              ->nullOnDelete();
 
         $table->timestamps();
     });
