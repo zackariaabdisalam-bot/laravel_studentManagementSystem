@@ -15,42 +15,16 @@ services:
         value: production
 
       - key: APP_DEBUG
-        value: "false"
+        value: false
 
       - key: APP_KEY
         generateValue: true
 
       - key: APP_URL
-        value: https://student-management-system26-3.onrender.com
+        value: https://student-management-system2026.onrender.com
 
       - key: DB_CONNECTION
         value: pgsql
-
-        - key: MPESA_ENV
-        value: sandbox
-
-        - key: MPESA_CONSUMER_KEY
-        value: NEORdZ4Dvj2JpJH4h5Ypa7AvjnmAoRu1INBZKmkHWyWjQ3KS
-
-        - key: MPESA_CONSUMER_SECRET
-        value: kWfGfhPowuqeLrz2CqsAockWPlgaGyomW0b8uzek0vwAjsQHFWvzudyj4PHInxCV
-
-        - key: MPESA_PASSKEY
-        value: bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919
-
-        - key: MPESA_CALLBACK_URL
-        value: https://cure-payback-canned.ngrok-free.dev
-
-        - key: MPESA_ENVIRONMENT
-        value: sandbox
-
-        - key: MPESA_SHORTCODE
-        value: 174379
-
-        -key:MPESA_CALLBACK_SECRET
-        value:37b9a826a31fe9beb3ade02a859c639a1ba104f8c03b7005a4b139500188b1cb
-
-
 
       - key: DB_HOST
         fromDatabase:
