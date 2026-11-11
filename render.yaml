@@ -21,7 +21,7 @@ services:
         generateValue: true
 
       - key: APP_URL
-        value: https://student-management-system2026-v3.onrender.com
+        value: https://student-management-system26-3.onrender.com
 
       - key: DB_CONNECTION
         value: pgsql
@@ -47,12 +47,8 @@ services:
         - key: MPESA_SHORTCODE
         value: 174379
 
-        -key   :MPESA_CALLBACK_SECRET
-        value  :37b9a826a31fe9beb3ade02a859c639a1ba104f8c03b7005a4b139500188b1cb
-
-
-
-
+        -key:MPESA_CALLBACK_SECRET
+        value:37b9a826a31fe9beb3ade02a859c639a1ba104f8c03b7005a4b139500188b1cb
 
 
 
