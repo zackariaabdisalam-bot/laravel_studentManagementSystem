@@ -11,6 +11,7 @@ use Illuminate\View\View;
 
 class CourseController extends Controller
 {
+    // Display the course list and optionally load a course for editing.
     public function index(Request $request): View
     {
         $courses = Course::query()->orderByDesc('id')->paginate(10);
@@ -21,11 +22,13 @@ class CourseController extends Controller
         return view('courses.index', compact('courses', 'editing'));
     }
 
+    // Show the form for creating a course.
     public function create(): View
     {
         return view('courses.create');
     }
 
+    // Validate and save a new course, then return to the course list.
     public function store(Request $request): RedirectResponse
     {
         Course::query()->create($request->validate([
@@ -39,6 +42,7 @@ class CourseController extends Controller
         return redirect()->route('courses.index')->with('status', 'Course created successfully.');
     }
 
+    // Validate and save changes to an existing course.
     public function update(Request $request, Course $course): RedirectResponse
     {
         $validatedData = $request->validate([
@@ -54,6 +58,7 @@ class CourseController extends Controller
         return redirect()->route('courses.index')->with('status', 'Course updated successfully.');
     }
 
+    // Delete a course unless students are already enrolled in it.
     public function destroy(Course $course): RedirectResponse
     {
         if (Schema::hasTable('enrollments') && $course->enrollments()->exists()) {

@@ -54,7 +54,7 @@ class ManagementModulesTest extends TestCase
 
         $this->post(route('fees.store'), [
             'student_id' => $student->id,
-            'title' => 'Term one',
+            'title' => 'Semester 1',
             'amount' => '1000.00',
         ])->assertRedirect(route('fees.index'));
         $fee = Fee::query()->firstOrFail();

@@ -9,9 +9,10 @@
         </button>
 
         <a class="navbar-brand d-flex align-items-center gap-2 gap-sm-3 me-2" href="{{ route('dashboard') }}">
-            <span class="d-inline-flex align-items-center justify-content-center rounded-3 bg-primary text-white fw-bold"
-                  style="width: 38px; height: 38px;">
-                SM
+            <span class="d-inline-flex align-items-center justify-content-center rounded-3 bg-primary-subtle text-primary"
+                  style="width: 38px; height: 38px;"
+                  aria-hidden="true">
+                <i class="bi bi-mortarboard-fill fs-5"></i>
             </span>
             <span class="fw-bold text-dark d-none d-sm-inline">Student Management System</span>
         </a>
@@ -47,11 +48,9 @@
                     <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2">
                         <li><h6 class="dropdown-header">Account</h6></li>
                         <li>
-                            <span class="dropdown-item text-muted disabled"
-                                  aria-disabled="true"
-                                  title="Unavailable">
+                            <a class="dropdown-item" href="{{ route('profile.edit') }}">
                                 <i class="bi bi-person-circle me-2" aria-hidden="true"></i>Profile
-                            </span>
+                            </a>
                         </li>
                         <li><hr class="dropdown-divider"></li>
                         <li>

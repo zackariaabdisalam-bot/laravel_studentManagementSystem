@@ -14,6 +14,12 @@
                 Dashboard
             </a>
 
+            <a href="{{ route('enrollments.index') }}"
+               class="nav-link {{ request()->routeIs('enrollments.*') ? 'active bg-white text-primary fw-semibold' : 'text-white' }}">
+                <i class="bi bi-journal-check me-2"></i>
+                Enrollments
+            </a>
+
             <a href="{{ route('students.index') }}"
                class="nav-link {{ request()->routeIs('students.*') ? 'active bg-white text-primary fw-semibold' : 'text-white' }}">
                 <i class="bi bi-people me-2"></i>
@@ -25,31 +31,27 @@
                 <i class="bi bi-book me-2"></i>
                 Courses
             </a>
-            <span class="nav-link text-white disabled opacity-50"
-                  aria-disabled="true"
-                  title="Unavailable">
+            <a href="{{ route('fees.index') }}"
+               class="nav-link {{ request()->routeIs('fees.*') ? 'active bg-white text-primary fw-semibold' : 'text-white' }}">
                 <i class="bi bi-cash-stack me-2"></i>
                 Fees
-            </span>
-            <span class="nav-link text-white disabled opacity-50"
-                  aria-disabled="true"
-                  title="Unavailable">
+            </a>
+            <a href="{{ route('payments.index') }}"
+               class="nav-link {{ request()->routeIs('payments.*') ? 'active bg-white text-primary fw-semibold' : 'text-white' }}">
                 <i class="bi bi-credit-card me-2"></i>
                 Payments
-            </span>
-            <span class="nav-link text-white disabled opacity-50"
-                  aria-disabled="true"
-                  title="Unavailable">
+            </a>
+            <a href="{{ route('reports.index') }}"
+               class="nav-link {{ request()->routeIs('reports.*') ? 'active bg-white text-primary fw-semibold' : 'text-white' }}">
                 <i class="bi bi-bar-chart me-2"></i>
                 Reports
-            </span>
+            </a>
 
-            <span class="nav-link text-white disabled opacity-50"
-                  aria-disabled="true"
-                  title="Unavailable">
+            <a href="{{ route('profile.edit') }}"
+               class="nav-link {{ request()->routeIs('profile.*') ? 'active bg-white text-primary fw-semibold' : 'text-white' }}">
                 <i class="bi bi-person-circle me-2"></i>
                 Profile
-            </span>
+            </a>
         </nav>
     </div>
 </aside>

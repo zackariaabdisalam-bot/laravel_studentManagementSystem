@@ -1,19 +1,6 @@
 <?php
 
 return [
-
-    /*
-    |--------------------------------------------------------------------------
-    | Third Party Services
-    |--------------------------------------------------------------------------
-    |
-    | This file is for storing the credentials for third party services such
-    | as Mailgun, Postmark, AWS and more. This file provides the de facto
-    | location for this type of information, allowing packages to have
-    | a conventional file to locate the various service credentials.
-    |
-    */
-
     'postmark' => [
         'key' => env('POSTMARK_API_KEY'),
     ],
@@ -35,4 +22,14 @@ return [
         ],
     ],
 
+    'mpesa' => [
+        'environment' => env('MPESA_ENVIRONMENT', 'sandbox'),
+        'consumer_key' => env('MPESA_CONSUMER_KEY'),
+        'consumer_secret' => env('MPESA_CONSUMER_SECRET'),
+        'shortcode' => env('MPESA_SHORTCODE'),
+        'passkey' => env('MPESA_PASSKEY'),
+        'callback_url' => env('MPESA_CALLBACK_URL'),
+        'callback_secret' => env('MPESA_CALLBACK_SECRET'),
+        'transaction_type' => env('MPESA_TRANSACTION_TYPE', 'CustomerPayBillOnline'),
+    ],
 ];

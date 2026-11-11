@@ -1,0 +1,100 @@
+# render.yaml
+
+services:
+  - type: web
+    name: student-management-system
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+
+    envVars:
+      - key: APP_NAME
+        value: "Student Management System"
+
+      - key: APP_ENV
+        value: production
+
+      - key: APP_DEBUG
+        value: "false"
+
+      - key: APP_KEY
+        generateValue: true
+
+      - key: APP_URL
+        value: https://student-management-system2026-v3.onrender.com
+
+      - key: DB_CONNECTION
+        value: pgsql
+
+        - key: MPESA_ENV
+        value: sandbox
+
+        - key: MPESA_CONSUMER_KEY
+        value: NEORdZ4Dvj2JpJH4h5Ypa7AvjnmAoRu1INBZKmkHWyWjQ3KS
+
+        - key: MPESA_CONSUMER_SECRET
+        value: kWfGfhPowuqeLrz2CqsAockWPlgaGyomW0b8uzek0vwAjsQHFWvzudyj4PHInxCV
+
+        - key: MPESA_PASSKEY
+        value: bfb279f9aa9bdbcf158e97dd71a467cd2e0c893059b10f78e6b72ada1ed2c919
+
+        - key: MPESA_CALLBACK_URL
+        value: https://cure-payback-canned.ngrok-free.dev
+
+        - key: MPESA_ENVIRONMENT
+        value: sandbox
+
+        - key: MPESA_SHORTCODE
+        value: 174379
+
+        -key   :MPESA_CALLBACK_SECRET
+        value  :37b9a826a31fe9beb3ade02a859c639a1ba104f8c03b7005a4b139500188b1cb
+
+
+
+
+
+
+
+      - key: DB_HOST
+        fromDatabase:
+          name: student-management-db
+          property: host
+
+      - key: DB_PORT
+        fromDatabase:
+          name: student-management-db
+          property: port
+
+      - key: DB_DATABASE
+        fromDatabase:
+          name: student-management-db
+          property: database
+
+      - key: DB_USERNAME
+        fromDatabase:
+          name: student-management-db
+          property: user
+
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: student-management-db
+          property: password
+
+      - key: CACHE_STORE
+        value: database
+
+      - key: SESSION_DRIVER
+        value: database
+
+      - key: QUEUE_CONNECTION
+        value: database
+
+      - key: LOG_CHANNEL
+        value: stderr
+
+databases:
+  - name: student-management-db
+    plan: free
+    databaseName: student_management_db
+    user: student_management_user

@@ -32,6 +32,9 @@ class Fee extends Model
 
     public function getBalanceAttribute(): float
     {
-        return max(0, (float) $this->amount - (float) ($this->payments_sum_amount ?? $this->payments()->sum('amount')));
+        $paidAmount = $this->payments_sum_amount
+            ?? $this->payments()->where('status', 'completed')->sum('amount');
+
+        return max(0, (float) $this->amount - (float) $paidAmount);
     }
 }
