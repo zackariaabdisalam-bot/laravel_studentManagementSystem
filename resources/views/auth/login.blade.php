@@ -38,6 +38,13 @@
                         @if (Route::has('password.request'))
                             <a class="login-link" href="{{ route('password.request') }}">{{ __('Forgot password?') }}</a>
                         @endif
+
+                        <a href="{{ route('register') }}"
+                       class="text-decoration-none small school-link">
+
+                        Sign up for an account
+
+                    </a>
                     </div>
 
                     <button type="submit" class="btn btn-primary login-submit w-100">
